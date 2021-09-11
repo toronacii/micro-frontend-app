@@ -30,6 +30,6 @@ jobs:
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: ${{ secrets.CONTAINER_DOMAIN_NAME }}
-          project: dist
+          project: container/dist
           login: ${{ secrets.SURGE_LOGIN }}
           token: ${{ secrets.SURGE_TOKEN }}
