@@ -6,9 +6,7 @@ on:
       - master
     paths:
       - container/**
-
-on:
-  workflow_dispatch:
+  workflow_dispatch:  
 
 defaults:
   run:
