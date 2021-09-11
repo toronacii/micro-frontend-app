@@ -1,4 +1,7 @@
+
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { ProvidePlugin } = require('webpack');
+const { dependencies } = require('../package.json');
 
 module.exports = {
   module: {
@@ -19,6 +22,14 @@ module.exports = {
   plugins: [
     new ProvidePlugin({
       'React': 'react'
+    }),
+    new ModuleFederationPlugin({
+      name: 'marketing',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './MarketingApp': './src/bootstrap'
+      },
+      shared: dependencies
     })
   ]
 }

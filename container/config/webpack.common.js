@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
   plugins: [
     new ProvidePlugin({
       'React': 'react'
-    })
+    }),
+    new HtmlWebpackPlugin({ template: './public/index.html' })
   ]
 }
