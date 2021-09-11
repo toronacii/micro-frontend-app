@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: 'mfe.container.surge.sh'
+          domain: ${{ secrets.CONTAINER_DOMAIN_NAME }}
           project: './dist'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
