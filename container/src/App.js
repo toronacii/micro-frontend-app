@@ -5,7 +5,7 @@ import Header from './components/Header';
 import RemoteApp from './components/RemoteApp';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'ctnr'
+  productionPrefix: 'container-'
 });
 
 export default () => {
