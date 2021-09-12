@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import App from './App';
-import { createMemoryHistory, createBrowserHistory } from 'history'
+import { createMemoryHistory, createBrowserHistory } from 'history';
 
 const mount = (el, options) => {
   const { onNavigate, initialPath, createHistory = createMemoryHistory } = options;
@@ -25,9 +25,9 @@ const mount = (el, options) => {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  const el = document.getElementById('dev-isolated-marketing-app');
-  el && mount(el, {   
-    initialPath: '/',
+  const el = document.getElementById('dev-isolated-auth-app');
+  el && mount(el, { 
+    initialPath: '/auth/signin',
     createHistory: createBrowserHistory 
   });
 }

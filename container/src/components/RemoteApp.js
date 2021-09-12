@@ -12,8 +12,9 @@ export default ({ mount }) => {
   }
 
   useEffect(() => {
-    const { onParentNavigate } = mount(ref.current, { onNavigate });
-    history.listen(onParentNavigate);
+    const { pathname: initialPath } = history.location;
+    const { onParentNavigate } = mount(ref.current, { initialPath, onNavigate });
+    return history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref}></div>
