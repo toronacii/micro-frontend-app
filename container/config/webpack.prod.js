@@ -8,7 +8,8 @@ const { MARKETING_DOMAIN_NAME, AUTH_DOMAIN_NAME, DASHBOARD_DOMAIN_NAME } = proce
 const prodConfig = {
   mode: 'production',
   output: {
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    publicPath: '/container/latest/'
   },
   plugins: [
     new ModuleFederationPlugin({
