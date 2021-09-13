@@ -21,9 +21,7 @@ jobs:
       - run: npm install
       - run: npm run build
         env: 
-          MARKETING_DOMAIN_NAME: ${{ secrets.MARKETING_DOMAIN_NAME }}
-          AUTH_DOMAIN_NAME: ${{ secrets.AUTH_DOMAIN_NAME }}
-          DASHBOARD_DOMAIN_NAME: ${{ secrets.DASHBOARD_DOMAIN_NAME }}
+          AWS_DOMAIN_NAME: ${{ secrets.AWS_DOMAIN_NAME }}
           
 
       - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
