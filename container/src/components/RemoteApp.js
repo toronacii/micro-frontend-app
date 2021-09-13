@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 
-export default ({ mount }) => {
+export default ({ mount, onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
   const onNavigate = ({ pathname: nextPathname }) => {
@@ -13,7 +13,7 @@ export default ({ mount }) => {
 
   useEffect(() => {
     const { pathname: initialPath } = history.location;
-    const { onParentNavigate } = mount(ref.current, { initialPath, onNavigate });
+    const { onParentNavigate } = mount(ref.current, { initialPath, onNavigate, onSignIn });
     return history.listen(onParentNavigate);
   }, []);
 
